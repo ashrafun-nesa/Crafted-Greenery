@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+
+
+    <link rel="stylesheet" href="admin.css" />
+   <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="js/bootstrap.min.js" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+
+    <title>Admin - Crafted Greenery </title>
+    <link rel="icon" type="image/png" href="img/logo/leaf.png">
+</head>
+
+<body>
+    <header>
+
+        <div class="sidebar">
+
+
+
+            <a class="" href="#">
+                <img height="35" width="35" src="img/logo/leaf.png ">
+                <h6>Crafted Greenery dashboard</h6>
+            </a>
+            <!-- <a class="" href="#home">Crafted Greenery dashboard</a> -->
+
+
+
+            <!-- upload -->
+            <a data-toggle="modal" href="#myModal" class="btn btn-outline-success my-2 my-sm-2"><i class="fa fa-shopping-cart"></i> Upload Product</a>
+
+
+
+            <form class="form-inline my-2 my-lg-0">
+
+                <button type="button" class="btn btn-outline-success my-2 my-sm-2" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-fw fa-user"></i>
+                        Log-In
+                      </button>
+            </form>
+            <!-- sign in Button trigger modal -->
+
+
+
+
+
+
+            <form class="form-inline my-2 my-lg-0">
+                <button type="button" class="btn btn-outline-success my-2 my-sm-2" data-toggle="modal" data-target="#exampleModalCenter_signup"><i class="fa fa-fw fa-user"></i>
+                        logout
+                      </button>
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+        <!-- upload product er modal er kaj  -->
+        <div class="modal fade bd-example-modal-lg" id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="display-4" style="background-color: white; color :#191A1A;">Upload Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="container"></div>
+                    <form>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4"><strong>   Product Name </strong></label>
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="Product Name">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress"><strong> your product image</strong></label>
+                            <input type="file" class="form-control" id="inputAddress" placeholder="Enter your Product description">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress"><strong> Product description</strong></label>
+                            <textarea type="text" rows="10" class="form-control" id="inputAddress" placeholder="Enter your Product description"></textarea>
+                        </div>
+                        <div class="form-row">
+
+
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4"><strong>Price</strong></label>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Enter your Price">
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal" class="btn">Close</a>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--login er Modal validation shoho -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Sign in</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="">
+                            <div class="form-group">
+                                <label for="exampleDropdownFormEmail2">Email address</label>
+                                <input type="email" onkeyup="ValidatedEmail();" class="form-control" id="txtEmail" placeholder="email@example.com">
+                                <span id="lblError" style="color: red"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEmail">Password</label>
+                                <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                <label class="form-check-label" for="dropdownCheck2">
+                                                Remember me
+                                              </label>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Order Accept/reject</h2>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Product name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Accept/reject</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Feedback</h2>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">feedback</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    </header>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<!-- login er email er validation  -->
+
+<script type="text/javascript">
+    function ValidatedEmail() {
+        console.log("hi");
+        var email = document.getElementById("txtEmail").value;
+        var lblError = document.getElementById("lblError");
+        lblError.innerHTML = "";
+        var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        if (!expr.test(email)) {
+            lblError.innerHTML = "Invalid email address.";
+        }
+    }
+</script>
+
+
+
+
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+
+<script src="js/popper.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+</html>
